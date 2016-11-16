@@ -7,6 +7,27 @@ import static org.junit.Assert.*;
  */
 public class StudentTest {
     @Test
+    public void setFirst_name() throws Exception {
+
+    }
+
+    @Test
+    public void getId() throws Exception {
+
+    }
+
+    @Test
+    public void setId() throws Exception {
+
+    }
+
+    @Test
+    public void getFirst_name() throws Exception {
+        Student st = new Student();
+        assertEquals("Oscar", st.getFirst_name()); // Should return false since "Oscar" Has not registered yet.
+    }
+
+    @Test
     public void register() throws Exception {
 
     }

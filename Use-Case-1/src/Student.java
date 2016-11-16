@@ -15,25 +15,25 @@ class Student {
     /**
      * @return a string to obtain the User's first name
      */
-    private String getFirst_name() {
+    public String getFirst_name() {
         return first_name;
     }
     /**
      * @param first_name sets String user's first name
      */
-    private void setFirst_name(String first_name) {
+    public void setFirst_name(String first_name) {
         this.first_name = first_name;
     }
     /**
      * @return a String type to obtain the User's ID #
      */
-    private String getId() {
+    public String getId() {
         return id;
     }
     /**
      * @param id Sets the ID of the user to be able to do JUnit testing
      */
-    private void setId(String id) {
+    public void setId(String id) {
         this.id = id;
     }
     /**
