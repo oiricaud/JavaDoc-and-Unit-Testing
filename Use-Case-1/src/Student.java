@@ -1,47 +1,62 @@
 import java.util.LinkedList;
 import java.util.Scanner;
 /**
- * Created by Oscar I. Ricaud on 11/16/16.
- * Student.java V1
+ * The Student Class has defined first name, last name and id variables to construct the methods.
+ * @author Oscar I. Ricaud
+ * @version 1.0 Build November 16, 2016
  */
-public class Student {
-    Scanner input =new Scanner(System.in);
+class Student {
+    private Scanner input =new Scanner(System.in);
     private String id;
     private String first_name;
     private String last_name;
     private LinkedList<String> classes;
 
-    public Student() {
-    }
-
-    public String getFirst_name() {
+    /**
+     * @return a string to obtain the User's first name
+     */
+    private String getFirst_name() {
         return first_name;
     }
-
-    public void setFirst_name(String first_name) {
+    /**
+     * @param first_name sets String user's first name
+     */
+    private void setFirst_name(String first_name) {
         this.first_name = first_name;
     }
 
-    public String getId() {
+    /**
+     * @return a String type to obtain the User's ID #
+     */
+    private String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    /**
+     * @param id Sets the ID of the user to be able to do JUnit testing
+     */
+    private void setId(String id) {
         this.id = id;
     }
 
-    public String getLast_name() {
+    /**
+     * @return a String type to obtain the last name of the user
+     */
+    private String getLast_name() {
         return last_name;
     }
 
-    public void setLast_name(String last_name) {
+    /**
+     * @param last_name Sets the last name of the user to be able to do JUnit testing
+     */
+    private void setLast_name(String last_name) {
         this.last_name = last_name;
     }
 
     /**
-     * @param userInput
+     * @param userInput takes in as an argument the user's input based on their registration status.
      */
-    public void register(String userInput) {
+    void register(String userInput) {
 
         // Register for new students
         if(userInput.equalsIgnoreCase("No")){
@@ -71,7 +86,7 @@ public class Student {
         }
     }
 
-    public void verifyInfo() {
+    private void verifyInfo() {
         System.out.println("\n So you say your first name is: " + getFirst_name() + " your last name is: " + getLast_name()
                 + " and your ID number is " + getId() + " is this correct?");
             register(input.next());
@@ -97,14 +112,14 @@ public class Student {
             getClasses();
         }
     }
-    public void drop_a_class(){
+    private void drop_a_class(){
         System.out.println("\n What class would you like to drop?");
     }
 
-    public LinkedList getClasses() {
+    private LinkedList getClasses() {
         return classes;
     }
-    public void setClasses(LinkedList<String> classes) {
+    private void setClasses(LinkedList<String> classes) {
         this.classes = classes;
     }
 }
