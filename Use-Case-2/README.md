@@ -1,2 +1,2 @@
-# JavaDoc-and-Unit-Testing
-Read me file
+# Registration-System
+CS 3331 Registration System
