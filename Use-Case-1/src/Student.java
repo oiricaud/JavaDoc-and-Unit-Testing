@@ -54,11 +54,11 @@ class Student {
     }
 
     /**
+     * Allows new users to register with our system if the user already has an account it will immediately ask the user
+     * for 3 different things it can do, Select a class, Check Transcript or Drop a class.
      * @param userInput takes in as an argument the user's input based on their registration status.
      */
     void register(String userInput) {
-
-        // Register for new students
         if(userInput.equalsIgnoreCase("No")){
             System.out.println("\n Okay, since you are not register then you can start up the registration process" +
                     " please give me your first name.");
@@ -86,12 +86,20 @@ class Student {
         }
     }
 
+    /**
+     *  This method asks the user to verify their credentials if they are incorrect the user is taken back to the
+     *  register method.
+     */
     private void verifyInfo() {
         System.out.println("\n So you say your first name is: " + getFirst_name() + " your last name is: " + getLast_name()
                 + " and your ID number is " + getId() + " is this correct?");
             register(input.next());
     }
 
+    /**
+     *  This method creates a placement of list which allows the user to type in the classes they are trying to register
+     *  for. After, the list is passed down to a setter method, setClasses.
+     */
     private void selectClass() {
         System.out.println("\n Please tell me how many class you want to register for");
         LinkedList<String> holdOnClasses = new LinkedList<String>();
@@ -103,7 +111,11 @@ class Student {
         setClasses(holdOnClasses);
     }
 
-    public void checkTranscript(){
+    /**
+     *  This method checks the transcript of the user, if the user is new and does not have an account a print statement
+     *  is printed.
+     */
+    private void checkTranscript(){
         if(getClasses().isEmpty()){
             System.out.println("It appears that your transcript is empty, please try to register for classes " +
                     " before you attempt to view your transcript");
@@ -112,13 +124,25 @@ class Student {
             getClasses();
         }
     }
+
+    /**
+     *  This method allows the user to drop classes, it will have a try and catch method to verify if the user has classes
+     *  to drop.
+     */
     private void drop_a_class(){
         System.out.println("\n What class would you like to drop?");
     }
 
+    /**
+     * @return the list of classes the user is currently registered for
+     */
     private LinkedList getClasses() {
         return classes;
     }
+
+    /**
+     * @param classes Sets the classes for the user.
+     */
     private void setClasses(LinkedList<String> classes) {
         this.classes = classes;
     }

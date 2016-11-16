@@ -1,6 +1,6 @@
 import java.util.Scanner;
 /**
- * The Main Class calls the Student Class to allow the User to register for an account
+ * The Main Class @see Student Class to allow the User to register for an account
  * @author Oscar I. Ricaud
  * @version 1.0 Build November 16, 2016
  */
