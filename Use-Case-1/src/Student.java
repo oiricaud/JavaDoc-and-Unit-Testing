@@ -11,6 +11,11 @@ class Student {
     private String first_name;
     private String last_name;
     private LinkedList<String> classes;
+    public boolean registered;
+
+    Student() {
+        registered = false;
+    }
 
     /**
      * @return a string to obtain the User's first name
@@ -55,31 +60,47 @@ class Student {
      */
     void register(String userInput) {
         if(userInput.equalsIgnoreCase("No")){
-            System.out.println("\n Okay, since you are not register then you can start up the registration process" +
-                    " please give me your first name.");
-            setFirst_name(input.next());
-            System.out.println("Your last name");
-            setLast_name(input.next());
-            System.out.println("Your ID number");
-            setId(input.next());
-            verifyInfo();
+            is_not_register(first_name, last_name, id);
         }
         else{
             System.out.println("\n Great! Since you are already register with our system, then you can skip" +
                     " the registration for new students. \n What would you like to do today? Select a class, Check Transcript or " +
                     "Drop a class?");
-            String whatToDo = input.nextLine();
-            if(whatToDo.equalsIgnoreCase("Select a class")){
-                selectClass();
-            }
-            if(whatToDo.equalsIgnoreCase("Check Transcript")){
-                checkTranscript();
-            }
-            if(whatToDo.equalsIgnoreCase("Drop a class")){
-                drop_a_class();
-            }
+            String whatToDo = "";
+            is_register(getFirst_name(), getLast_name(), getId(), whatToDo);
         }
     }
+
+    /**
+     * @param first_name is the first name of the registered user
+     * @param last_name is the last name of the registered user
+     * @param id        is the id of the registered user
+     */
+    private void is_register(String first_name, String last_name, String id, String whatToDo) {
+
+        if(whatToDo.equalsIgnoreCase("Select a class")){
+            selectClass();
+        }
+        if(whatToDo.equalsIgnoreCase("Check Transcript")){
+            checkTranscript();
+        }
+        if(whatToDo.equalsIgnoreCase("Drop a class")){
+            drop_a_class();
+        }
+        if(whatToDo.equalsIgnoreCase("")){
+            System.out.println("User, we must do something");
+        }
+
+    }
+
+    public boolean is_not_register(String first_name, String last_name, String id) {
+        setFirst_name(first_name);
+        setLast_name(last_name);
+        setId(id);
+       // verifyInfo();
+        return registered = true;
+    }
+
     /**
      *  This method asks the user to verify their credentials if they are incorrect the user is taken back to the
      *  register method.
