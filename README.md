@@ -1,3 +1,9 @@
+
+We divided the assignment into 3 different folders, each folder are independent from each other. In other words, each folder contains a unique use case we have identify for our project (Read Task 3 for more info)
+In each of these folders we successfuly included the Javadoc and JUnit cases (Task 1 and Task 2).
+
+Below you can find the assignment that was assign to our group. Contributors are Jessica Dozal and Marina Chong.
+
 Javadoc & Unit Tests
 
 Due November 17th by end of day on Blackboard
