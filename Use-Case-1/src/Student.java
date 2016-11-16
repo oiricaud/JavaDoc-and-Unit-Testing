@@ -16,7 +16,6 @@ class Student {
     Student() {
         registered = false;
     }
-
     /**
      * @return a string to obtain the User's first name
      */
@@ -90,7 +89,6 @@ class Student {
         if(whatToDo.equalsIgnoreCase("")){
             System.out.println("User, we must do something");
         }
-
     }
 
     public boolean is_not_register(String first_name, String last_name, String id) {
