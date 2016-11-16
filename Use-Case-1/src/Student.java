@@ -1,8 +1,11 @@
+import java.util.Scanner;
+
 /**
  * Created by oscarricaud on 11/16/16.
  */
 public class Student {
-    private int id;
+    Scanner input =new Scanner(System.in);
+    private String id;
     private String first_name;
     private String last_name;
 
@@ -14,11 +17,11 @@ public class Student {
         this.first_name = first_name;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -31,17 +34,29 @@ public class Student {
     }
 
     public void register(String userInput) {
+
+        // Register for new students
         if(userInput.equalsIgnoreCase("No")){
-            register(first_name, last_name, id);
+            System.out.println("\n Okay, since you are not register then you can start up the registration process" +
+                    " please give me your first name.");
+            setFirst_name(input.next());
+            System.out.println("Your last name");
+            setLast_name(input.next());
+            System.out.println("Your ID number");
+            setId(input.next());
+            verifyInfo();
         }
         else{
             System.out.println("\n Great! Since you are already register with our system, then you can skip" +
-                    "the registration for new students. \n What would you like to do today? Register, Check Transcript or" +
+                    " the registration for new students. \n What would you like to do today? Register, Check Transcript or" +
                     "Drop a class?");
+            input.next();
         }
     }
-    public void register(String firstName, String lastName, int id) {
-        
+    public void verifyInfo() {
+        System.out.println("\n So you say your first name is: " + getFirst_name() + " your last name is: " + getLast_name()
+                + " and your ID number is " + getId() + " is this correct?");
+            register(input.next());
     }
 
     public void checkTranscript(){
