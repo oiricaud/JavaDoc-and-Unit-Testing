@@ -24,35 +24,30 @@ class Student {
     private void setFirst_name(String first_name) {
         this.first_name = first_name;
     }
-
     /**
      * @return a String type to obtain the User's ID #
      */
     private String getId() {
         return id;
     }
-
     /**
      * @param id Sets the ID of the user to be able to do JUnit testing
      */
     private void setId(String id) {
         this.id = id;
     }
-
     /**
      * @return a String type to obtain the last name of the user
      */
     private String getLast_name() {
         return last_name;
     }
-
     /**
      * @param last_name Sets the last name of the user to be able to do JUnit testing
      */
     private void setLast_name(String last_name) {
         this.last_name = last_name;
     }
-
     /**
      * Allows new users to register with our system if the user already has an account it will immediately ask the user
      * for 3 different things it can do, Select a class, Check Transcript or Drop a class.
@@ -85,7 +80,6 @@ class Student {
             }
         }
     }
-
     /**
      *  This method asks the user to verify their credentials if they are incorrect the user is taken back to the
      *  register method.
@@ -95,7 +89,6 @@ class Student {
                 + " and your ID number is " + getId() + " is this correct?");
             register(input.next());
     }
-
     /**
      *  This method creates a placement of list which allows the user to type in the classes they are trying to register
      *  for. After, the list is passed down to a setter method, setClasses.
@@ -124,7 +117,6 @@ class Student {
             getClasses();
         }
     }
-
     /**
      *  This method allows the user to drop classes, it will have a try and catch method to verify if the user has classes
      *  to drop.
@@ -132,14 +124,12 @@ class Student {
     private void drop_a_class(){
         System.out.println("\n What class would you like to drop?");
     }
-
     /**
      * @return the list of classes the user is currently registered for
      */
     private LinkedList getClasses() {
         return classes;
     }
-
     /**
      * @param classes Sets the classes for the user.
      */
